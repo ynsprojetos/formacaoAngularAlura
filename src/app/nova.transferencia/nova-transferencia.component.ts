@@ -9,8 +9,8 @@ export class NovaTransferenciaComponent {
 
   @Output() aoTransferir = new EventEmitter<any>();
 
-  valor: number = 123;
-  destino: number = 2224;
+  valor: number = 0;
+  destino: number = 0;
 
 
   transferir() {
