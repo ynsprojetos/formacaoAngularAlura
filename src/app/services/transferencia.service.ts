@@ -23,9 +23,9 @@ constructor(private httpClient: HttpClient) {
    return this.httpClient.get<Transferencia[]>(this.url)
  }
 
- adicionar(transferencia: any){
+ adicionar(transferencia: Transferencia): Observable<Transferencia> {
   this.hidratar(transferencia)
-  this.transferencias.push(transferencia);
+  return this.httpClient.post<Transferencia>(this.url, transferencia)
  }
 
  private hidratar(transferencia: any){
